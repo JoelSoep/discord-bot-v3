@@ -83,6 +83,7 @@ Last update: <t:${Math.floor(Date.now() / 1000)}:R>`;
             status: "online"
        })
 
+       this.client.ManualStatusPage.playerCount = data?.players?.online ?? 0;
         if (this.offlineCount != this.maxOfflineCount) {
             return;
         }

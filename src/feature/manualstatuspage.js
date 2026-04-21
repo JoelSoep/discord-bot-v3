@@ -45,7 +45,7 @@ class ManualStatusPage {
         embed.setDescription(this.overrideDescription);
         embed.setThumbnail("https://dunb17ur4ymx4.cloudfront.net/webstore/logos/ca037a9d9b6f4fbca8ffb6d74a96bc9ede993223.png")
         if (data.incidents.length == 0 && this.overrideDescription == "EMPTY") {
-            embed.setDescription("Everything seems to be working fine!\nVisit play.mcmanhunt.com to join!") // DEFAULT DESCRIPTION
+            embed.setDescription("Everything seems to be working fine!\nVisit play.mcmanhunt.com to join!\n" + this.playerCount + " players online") // DEFAULT DESCRIPTION
             // other fun info
         } else {
             let idArray = [];
@@ -61,7 +61,6 @@ class ManualStatusPage {
                     }
                     idArray.push(update.id);
                     if (update.status == status && update.body != null) {
-                        
                         embed.addFields({ name: incident.name + " (" + incident.status.charAt(0).toUpperCase() + incident.status.slice(1) + ")", value: update.body, inline: true });
                     }
                     i++;
